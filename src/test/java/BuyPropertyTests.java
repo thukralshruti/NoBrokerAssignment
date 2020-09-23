@@ -40,7 +40,7 @@ public class BuyPropertyTests extends TestBase  {
         logger.info(propertyTestData.note + " details note is added");
         suggestAnEditPage.verifyFeedbackIsSubmitted();
         logger.info("Feedback popup is verified");
-        
+
     }
 
     @DataProvider(name = "TestData")

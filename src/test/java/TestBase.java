@@ -1,6 +1,4 @@
 
-
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -62,11 +60,7 @@ public class TestBase {
 
         extent.attachReporter(htmlReporter);
         extent.setSystemInfo("Host name", "QA");
-//        extent.setSystemInfo("Environment", System.getProperty("env").toString());
-//        extent.setSystemInfo("GroupName", System.getProperty("groups").toString());
-
-        htmlReporter.config().setDocumentTitle("No Broker Assignment Report"); // Tile of report
-        htmlReporter.config().setReportName("No Broker Assignment Report"); // name of the report
+        htmlReporter.config().setReportName("No Broker Assignment Report");
 
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setTheme(Theme.STANDARD);
@@ -78,13 +72,13 @@ public class TestBase {
         if (result.getStatus() == ITestResult.FAILURE) {
             TakesScreenshot ts = (TakesScreenshot) driver;
             File source = ts.getScreenshotAs(OutputType.FILE); // capture screenshot file
-            String targetpath = "./ExtentReport/" + result.getName() + ".png";
-            FileUtils.copyFile(source, new File(targetpath));
+            String targetPath = "./ExtentReport/" + result.getName() + ".png";
+            FileUtils.copyFile(source, new File(targetPath));
             System.out.println("screenshot captured");
             logger.log(Status.FAIL, MarkupHelper.createLabel(methodName.getName(), ExtentColor.RED));
             logger.fail(result.getThrowable().getMessage());
             try {
-                logger.fail("Screenshot is below:" + logger.addScreenCaptureFromPath("." + targetpath));
+                logger.fail("Screenshot is below:" + logger.addScreenCaptureFromPath("." + targetPath));
             } catch (IOException e) {
                 e.printStackTrace();
             }
