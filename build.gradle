@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+}
+
+group 'org.nobroker'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.seleniumhq.selenium', name: 'lift', version: '3.14.0'
+    compile group: 'org.testng', name: 'testng', version: '6.14.3'
+    testCompile(group: 'org.uncommons', name: 'reportng', version: '1.1.4') {
+        exclude group: 'org.testng', module: 'testng'
+    }
+    compile group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
+    compile group: 'io.qameta.allure', name: 'allure-testng', version: '2.7.0'
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.1'
+    compile group: 'io.qameta.allure', name: 'allure-java-commons', version: '2.7.0'
+    compile files('libs/service-tests-1.0-SNAPSHOT.jar')
+    compileOnly "org.projectlombok:lombok:1.18.2"
+    testCompileOnly "org.projectlombok:lombok:1.18.2"
+    annotationProcessor "org.projectlombok:lombok:1.18.2"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.2"
+    compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.472'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.6'
+    compile group: 'io.rest-assured', name: 'json-schema-validator', version: '3.0.6'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.7'
+    compile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.4.0'
+    // compile group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver', version: '2.0.0'
+    compile group: 'org.seleniumhq.selenium', name: 'htmlunit-driver', version: '2.33.3'
+    compile group: 'au.com.bytecode', name: 'opencsv', version: '2.4'
+    compile group: 'io.rest-assured', name: 'json-path', version: '3.0.0'
+    compile 'org.apache.httpcomponents:httpclient:4.5.7'
+    compile group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.11'
+    compile 'org.apache.httpcomponents:httpclient:4.5'
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.0'
+    compile group: 'org.json', name: 'json', version: '20180813'
+    compile group: 'com.browserstack', name: 'browserstack-local-java', version: '1.0.3'
+    testCompile "junit:junit:[4.12,)"
+    compile(group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.8.5')
+    testCompile(group: 'com.googlecode.lambdaj', name: 'lambdaj', version: '2.3.3')
+    testCompile(group: 'com.google.inject', name: 'guice', version: '3.0')
+    compile group: 'com.opencsv', name: 'opencsv', version: '4.0'
+    compile group: 'org.apache.poi', name: 'poi', version: '3.9'
+    compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
+    compile 'com.github.ozlerhakan:poiji:1.22.0'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.0'
+    compile group: 'io.appium', name: 'java-client', version: '7.0.0'
+    // https://mvnrepository.com/artifact/com.aventstack/extentreports
+    compile group: 'com.aventstack', name: 'extentreports', version: '3.0.0'
+
+}
